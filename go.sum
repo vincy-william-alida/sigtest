@@ -1,0 +1,6 @@
+github.com/gregscott94/z-table-golang v1.0.0 h1:0n1gQfaZTylqjO4ekGOpgVqYYnEf4dNb99572/89j7s=
+github.com/gregscott94/z-table-golang v1.0.0/go.mod h1:Ry4hDY4R7Jn5HfQuWfI7H5GNRDqG4lyNj8SP9xvfPkY=
+golang.org/x/exp v0.0.0-20231110203233-9a3e6036ecaa h1:FRnLl4eNAQl8hwxVVC17teOw8kdjVDVAiFMtgUdTSRQ=
+golang.org/x/exp v0.0.0-20231110203233-9a3e6036ecaa/go.mod h1:zk2irFbV9DP96SEBUUAy67IdHUaZuSnrz1n472HUCLE=
+gonum.org/v1/gonum v0.15.0 h1:2lYxjRbTYyxkJxlhC+LvJIx3SsANPdRybu1tGj9/OrQ=
+gonum.org/v1/gonum v0.15.0/go.mod h1:xzZVBJBtS+Mz4q0Yl2LJTk+OxOg4jiXZ7qBoM0uISGo=
