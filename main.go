@@ -134,7 +134,7 @@ func calculateSignificance(crossMapZScores map[string]float64, crossMapIsSignifi
 		pValue := zScoreToPValue(value)
 		fmt.Println(key)
 		fmt.Println(pValue)
-		if pValue < (1 - 0.95) {
+		if pValue <= (1 - 0.95) {
 			crossMapIsSignificant[key] = true
 		} else {
 			crossMapIsSignificant[key] = false
