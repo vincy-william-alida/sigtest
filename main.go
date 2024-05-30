@@ -115,26 +115,29 @@ func zScoreToPValue(z float64) float64 {
 	dist := distuv.Normal{Mu: 0, Sigma: 1}
 
 	// Calculate the cumulative probability up to the z-score
-	cdf := dist.CDF(z)
+	cdf := math.Min(dist.CDF(z), 1-dist.CDF(z))
 
 	// For two-tailed test, p-value is 2 times the min of CDF and 1-CDF
-	pValue := 2 * (1 - cdf)
-	if cdf < 0.5 {
-		pValue = 2 * cdf
-	}
+	// pValue := 2 * (1 - cdf)
+	// if cdf < 0.5 {
+	// 	pValue = 2 * cdf
+	// }
+	pValue := 2 * cdf
+
+	fmt.Println("pValue: ", pValue)
 
 	return pValue
 }
 
 func calculateSignificance(crossMapZScores map[string]float64, crossMapIsSignificant map[string]bool) {
 	for key, value := range crossMapZScores {
-		percentage := zScoreToPValue(value)
+		pValue := zScoreToPValue(value)
 		fmt.Println(key)
-		fmt.Println(percentage)
-		if percentage <= 0.95 {
-			crossMapIsSignificant[key] = false
-		} else {
+		fmt.Println(pValue)
+		if pValue < (1 - 0.95) {
 			crossMapIsSignificant[key] = true
+		} else {
+			crossMapIsSignificant[key] = false
 		}
 	}
 
